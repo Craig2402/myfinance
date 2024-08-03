@@ -45,7 +45,8 @@
     </div>
     <script>
         new DataTable('#data-tables', {
-            responsive: true
+            responsive: true,
+            order: [[0, 'desc']]
         });
     </script>
 </body>

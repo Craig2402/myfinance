@@ -28,7 +28,7 @@
                                     <label for="reason" class="block text-sm font-medium text-gray-700">Reason</label>
                                     <select name="reason" id="reason"
                                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                        <option value="all" selected disabled>All Reasons</option>
+                                        <option value="all" selected>All Reasons</option>
                                         @foreach ($distinctReasons as $distinctReason)
                                             <option value="{{ $distinctReason }}">{{ $distinctReason }}
                                             </option>

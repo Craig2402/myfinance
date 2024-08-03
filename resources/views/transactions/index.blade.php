@@ -32,18 +32,18 @@
                     <table class="min-w-full divide-y divide-gray-200" id="data-tables">
                         <thead class="bg-gray-50">
                             <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Transaction ID</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Reason</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($transactions as $transaction)
                                 <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $transaction->date }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $transaction->transaction_id }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $transaction->amount }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $transaction->date }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $transaction->reason }}</td>
                                 </tr>
                             @endforeach

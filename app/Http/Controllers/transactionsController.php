@@ -35,7 +35,7 @@ class transactionsController extends Controller
             'transaction_id' => 'required|unique:transactions_models',
             'amount' => 'required|numeric|min:0',
             'date' => 'required|date',
-            'reason' => 'required|in:lunch,transport,snacks',
+            'reason' => 'required|in:lunch,transport,snacks,Airtime-and-Bundles,tcost,other-business',
         ]);
 
         DB::beginTransaction();

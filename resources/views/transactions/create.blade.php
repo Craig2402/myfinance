@@ -56,6 +56,9 @@
                                 <option value="lunch">Lunch</option>
                                 <option value="transport">Transport</option>
                                 <option value="snacks">Snacks</option>
+                                <option value="tcost">Transaction Cost</option>
+                                <option value="Airtime-and-Bundles">Airtime & Bundles</option>
+                                <option value="other-business">Other</option>
                             </select>
                         </div>
                         <div class="flex justify-center">
