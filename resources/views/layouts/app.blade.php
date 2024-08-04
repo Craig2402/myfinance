@@ -28,8 +28,6 @@
     {{-- chardjs --}}
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<link href="{{ mix('css/app.css') }}" rel="stylesheet">
-
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
