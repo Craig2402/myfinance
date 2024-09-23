@@ -32,7 +32,6 @@ class transactionsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'transaction_id' => 'required|unique:transactions_models',
             'amount' => 'required|numeric|min:0',
             'date' => 'required|date',
             'reason' => 'required|in:lunch,transport,snacks,Airtime-and-Bundles,tcost,other-business',
@@ -51,7 +50,7 @@ class transactionsController extends Controller
             $user->save();
 
             $transaction = new transactionsModel();
-            $transaction->transaction_id = $request->transaction_id;
+            $transaction->transaction_id = 'TRX' . time() . rand(1000, 9999);
             $transaction->amount = $request->amount;
             $transaction->date = $request->date;
             $transaction->reason = $request->reason;

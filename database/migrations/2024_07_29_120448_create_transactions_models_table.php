@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('transactions_models', function (Blueprint $table) {
             $table->id();
-            $table->string('transaction_id')->unique();
+            $table->string('transaction_id')->nullable();
             $table->decimal('amount', 10, 2);
             $table->date('date');
             $table->string('reason');

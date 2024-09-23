@@ -29,42 +29,42 @@
                     <form action="{{ route('transactions.store') }}" method="POST">
                         @csrf
                         <div class="mb-4">
-                            <label for="transaction_id" class="block text-sm font-medium text-gray-700">Transaction
-                                ID</label>
-                            <input type="text"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="transaction_id" name="transaction_id" placeholder="Transaction ID" required>
-                        </div>
-                        <div class="mb-4">
                             <label for="amount" class="block text-sm font-medium text-gray-700">Amount</label>
                             <input type="number"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="amount" name="amount" step="0.01" placeholder="Amount" required>
+                                id="amount" name="amount" step="0.01" placeholder="Amount"
+                                value="{{ old('amount') }}">
                         </div>
                         <div class="mb-4">
                             <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
                             <input type="date"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="date" name="date" placeholder="Date" required>
+                                id="date" name="date" placeholder="Date" value="{{ old('date') }}">
                         </div>
                         <div class="mb-4">
                             <label for="reason" class="block text-sm font-medium text-gray-700">Reason</label>
                             <select
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="reason" name="reason" required>
+                                id="reason" name="reason">
                                 <option value="" selected disabled>Select a reason</option>
-                                <option value="lunch">Lunch</option>
-                                <option value="transport">Transport</option>
-                                <option value="snacks">Snacks</option>
-                                <option value="tcost">Transaction Cost</option>
-                                <option value="Airtime-and-Bundles">Airtime & Bundles</option>
-                                <option value="other-business">Other</option>
+                                <option value="lunch" {{ old('reason') == 'lunch' ? 'selected' : '' }}>Lunch</option>
+                                <option value="transport" {{ old('reason') == 'transport' ? 'selected' : '' }}>Transport
+                                </option>
+                                <option value="snacks" {{ old('reason') == 'snacks' ? 'selected' : '' }}>Snacks</option>
+                                <option value="tcost" {{ old('reason') == 'tcost' ? 'selected' : '' }}>Transaction
+                                    Cost</option>
+                                <option value="Airtime-and-Bundles"
+                                    {{ old('reason') == 'Airtime-and-Bundles' ? 'selected' : '' }}>Airtime & Bundles
+                                </option>
+                                <option value="other-business"
+                                    {{ old('reason') == 'other-business' ? 'selected' : '' }}>Other</option>
                             </select>
                         </div>
                         <div class="flex justify-center">
                             <button type="submit"
                                 class="inline-flex items-center justify-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150 w-64 text-center">Save</button>
                         </div>
+
                     </form>
                 </div>
             </div>

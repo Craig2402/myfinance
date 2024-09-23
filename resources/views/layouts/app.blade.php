@@ -25,11 +25,41 @@
     <script src="https://cdn.datatables.net/2.1.2/js/dataTables.bootstrap5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Include jQuery and jQuery UI for draggable and resizable functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
     {{-- chardjs --}}
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        .calculator button {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .calculator button:hover {
+            opacity: 0.8;
+        }
+
+        #calculator-popup::-webkit-scrollbar {
+            display: none;
+        }
+
+        #calculator-popup {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased">
@@ -41,12 +71,23 @@
             {{ $slot }}
         </main>
     </div>
+
+    <script>
+        $("#open-calculator").click(function() {
+            $("#calculator-popup").show();
+        });
+    </script>
+
+    @include('calculator')
     <script>
         new DataTable('#data-tables', {
             responsive: true,
-            order: [[0, 'desc']]
+            order: [
+                [0, 'desc']
+            ]
         });
     </script>
+
 </body>
 
 </html>
