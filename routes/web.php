@@ -3,6 +3,7 @@
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\lendController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\recieveController;
 use App\Http\Controllers\savingsController;
 use App\Http\Controllers\transactionsController;
 use Illuminate\Support\Facades\Route;
@@ -42,11 +43,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/savings/{SavingsTarget}', [savingsController::class, 'show'])->name('savings.show');
     Route::get('/savings/{SavingsTarget}/save', [savingsController::class, 'save'])->name('savings.save');
 
-
+    Route::get('/receive', [recieveController::class, 'index'])->name('receive.index');
+    Route::get('/receive/create', [recieveController::class, 'create'])->name('receive.create');
+    Route::post('/receive', [recieveController::class, 'store'])->name('receive.store');
+    Route::get('/receive/{recieveModel}', [recieveController::class, 'show'])->name('receive.show');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

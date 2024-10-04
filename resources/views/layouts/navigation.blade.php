@@ -13,22 +13,27 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Dashboard') }} 📊
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('lend.index')" :active="request()->routeIs('lend.index')">
-                        {{ __('Lend') }}
+                        {{ __('Lend') }} 💸
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('transactions.index')" :active="request()->routeIs('transactions.index')">
-                        {{ __('Transactions') }}
+                        {{ __('Transactions') }} 💳
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('receive.index')" :active="request()->routeIs('receive.index')">
+                        {{ __('Receive') }} 📥
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('savings.index')" :active="request()->routeIs('savings.index')">
-                        {{ __('Savings') }}
+                        {{ __('Savings') }} 🏦
                     </x-nav-link>
                 </div>
             </div>
